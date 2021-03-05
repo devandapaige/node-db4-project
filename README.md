@@ -26,18 +26,23 @@ The requirements for the system, as stated by the client are:
 
 **Hint**: Before writing any code, write out all desired tables in the data model and determine all relationships between tables.
 
+##### 👌 Outline added to the /data folder
+
 ### Migrations and Seeds
 
-- Write a migration file that creates all tables necessary to model this data
-- Write seed files to populate the tables with test data. **Hint**: Keep your recipes _very_ simple or this step could become extremely time consuming.
+✅ Write a migration file that creates all tables necessary to model this data
+✅ Write seed files to populate the tables with test data. **Hint**: Keep your recipes _very_ simple or this step could become extremely time consuming.
 
 ### Data Access
 
 In addition to the `migrations` and `seeding` scripts, write a data access file that **exports** an object with the following functions:
 
 - `getRecipes()`: should return a list of all recipes in the database.
+    - in => ./models/recipe.js
 - `getShoppingList(recipe_id)`: should return a list of all ingredients and quantities for a given recipe
-- `getInstructions(recipe_id)`: should return a list of step by step instructions for preparing a recipe
+    - in => ./models/ingredient.js
+- `getDirections(recipe_id)`: should return a list of step by step instructions for preparing a recipe
+    - in => ./models/directions.js
 
 Organize and name your files anyway you see fit.
 
