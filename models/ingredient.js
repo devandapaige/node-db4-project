@@ -4,7 +4,10 @@
 const db = require("../data/config");
 
 function getShoppingList(recipe_id) {
-  return db("ingredients as i");
+  return db("ingredients as i")
+    .innerJoin("recipes_ingredients as ri")
+    .where("ri.recipe_id", recipe_id)
+    .select("i.ingredient");
 }
 
 module.exports = {
